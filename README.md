@@ -18,6 +18,7 @@
 - index lists all images in the thumbnails-folder and shows the fullsize uploaded one
 
 ## Notes
+- IMPORTANT! You must create a folder "images" and "thumbnails" in root in order for it to work. You can't commit empty folders to Github so that's why they are missing.
 - It was tested using Apache 2.4 PHP 8.5.
 - If uploads aren't working, check the folder write permissions. If you’re using FileZilla, right‑click the folder and hit "Set permissions". Otherwise, ask someone with a suspiciously pale beard or someone who still carries a calculator like it’s 1993. They'll know what to do. They have what's known as a "UNIX-beard".
 
@@ -31,6 +32,7 @@
 
 ### License means you can use it as you please, and don't bother me unless you're buying a beer. Fork it, make a new version. Improve upon it. It's fully free to use as you want.
 [![License: Beerware](https://img.shields.io/badge/License-Beerware-yellow.svg)](LICENSE)
+
 
 
 <a href="https://www.buymeacoffee.com/lasseedsvik" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
