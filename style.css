@@ -44,6 +44,29 @@ h1 {
 	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
 	margin-bottom: 20px;
 	padding-top: 10px;
+	animation: flicker 4s alternate ease-in-out;
+}
+
+@keyframes flicker {
+	0% {
+		text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.6);
+		opacity: 1;
+	}
+
+	40% {
+		text-shadow: 4px 4px 12px rgba(255, 204, 102, 0.4);
+		opacity: 0.9;
+	}
+
+	60% {
+		text-shadow: 4px 4px 14px rgba(255, 204, 102, 0.5);
+		opacity: 1;
+	}
+
+	100% {
+		text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.6);
+		opacity: 0.95;
+	}
 }
 
 /* --------------------------------------------------
