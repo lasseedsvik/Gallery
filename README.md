@@ -8,7 +8,7 @@
 * EXIF‑aware rotation handling so iPhone photos stop acting drunk.
 * Pinch‑to‑zoom support for that “let me get a closer look” moment.
 * Responsive design for tablets and phones.
-* Keyboard navigation for old desktop farts like myself who still believe in arrow keys.
+* Keyboard navigation for old desktop farts like myself who still believe in arrow keys and the power of esc.
 * Touch-support so it should work even if your kid has peanut butter on their fingers whilst swiping left right.
 * No external dependencies.
 
@@ -36,6 +36,7 @@
 
 
 <a href="https://www.buymeacoffee.com/lasseedsvik" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+
 
 
 
