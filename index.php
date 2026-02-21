@@ -1,16 +1,16 @@
 <?php
-$thumbDir = "thumbnails/";
-$imgDir = "images/";
+    $thumbDir = "thumbnails/";
+    $imgDir = "images/";
 
-// Get files
-$thumbs = array_values(array_filter(scandir($thumbDir), function ($file) use ($thumbDir) {
-    return is_file($thumbDir . $file);
-}));
+    // Get files
+    $thumbs = array_values(array_filter(scandir($thumbDir), function ($file) use ($thumbDir) {
+        return is_file($thumbDir . $file);
+    }));
 
-// Sort by newest files
-usort($thumbs, function ($a, $b) use ($thumbDir) {
-    return filemtime($thumbDir . $b) - filemtime($thumbDir . $a);
-});
+    // Sort by newest files
+    usort($thumbs, function ($a, $b) use ($thumbDir) {
+        return filemtime($thumbDir . $b) - filemtime($thumbDir . $a);
+    });
 ?>
 <!DOCTYPE html>
 <html lang="sv">
@@ -81,6 +81,12 @@ usort($thumbs, function ($a, $b) use ($thumbDir) {
             currentIndex = index;
             lightboxImg.src = images[index].dataset.full;
             lightbox.style.display = "flex";
+            document.body.classList.add("no-scroll"); // Disable scrolling
+        }
+
+        function closeLightbox() {
+            lightbox.style.display = "none";
+            document.body.classList.remove("no-scroll"); // Re-enable scrolling
         }
 
         images.forEach((img, i) => {
@@ -99,10 +105,10 @@ usort($thumbs, function ($a, $b) use ($thumbDir) {
 
         nextBtn.addEventListener("click", nextImage);
         prevBtn.addEventListener("click", prevImage);
-        closeBtn.addEventListener("click", () => lightbox.style.display = "none");
+        closeBtn.addEventListener("click", closeLightbox);
 
         lightbox.addEventListener("click", (e) => {
-            if (e.target === lightbox) lightbox.style.display = "none";
+            if (e.target === lightbox) closeLightbox();
         });
 
         document.addEventListener("keydown", (e) => {
@@ -110,16 +116,15 @@ usort($thumbs, function ($a, $b) use ($thumbDir) {
 
             if (e.key === "ArrowRight") nextImage();
             if (e.key === "ArrowLeft") prevImage();
-            if (e.key === "Escape") lightbox.style.display = "none";
+            if (e.key === "Escape") closeLightbox();
         });
 
-        // ⭐ Förbättrad swipe-funktion
+        // Swipe functionality
         let touchStartX = 0;
         let touchEndX = 0;
 
         function handleSwipe() {
             const diff = touchStartX - touchEndX;
-
             if (Math.abs(diff) < 50) return;
 
             if (diff > 0) nextImage();
