@@ -34,6 +34,11 @@ body {
 	background: radial-gradient(circle at center, #4e4e4e 0%, var(--bg-dark) 100%);
 }
 
+body.no-scroll {
+	touch-action: none;
+	overflow: hidden;
+}
+
 h1 {
 	font-family: "Cormorant Garamond", serif;
 	font-size: 80px;
