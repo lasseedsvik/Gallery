@@ -183,6 +183,18 @@ button:hover svg {
 	transform: translateY(-2px) scale(1.01);
 }
 
+.heic-preview {
+	width: 120px;
+	height: 120px;
+	background: #eee;
+	border-radius: 8px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: .8rem;
+	color: #555;
+}
+
 /* --------------------------------------------------
    PREVIEW
 -------------------------------------------------- */
@@ -273,6 +285,27 @@ button:hover svg {
 	border-radius: var(--radius-lg);
 	box-shadow: var(--shadow-lg);
 }
+
+.lightbox-zoom-container {
+	position: relative;
+	overflow: hidden;
+	touch-action: none;
+	/* required for pinch */
+	max-width: 90%;
+	max-height: 90%;
+}
+
+#lightbox-img,
+#lightbox-video {
+	transform-origin: center center;
+	transition: transform 0.15s ease-out;
+}
+
+#lightbox-video {
+	display: none;
+}
+
+
 
 /* --------------------------------------------------
    LIGHTBOX CONTROLS
